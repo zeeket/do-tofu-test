@@ -1,6 +1,6 @@
 resource "digitalocean_ssh_key" "terraform" {
   name       = "Terraform Example"
-  public_key = file(var.pub_key)
+  public_key = var.pub_key
 }
 
 resource "digitalocean_droplet" "www-1" {
@@ -16,7 +16,7 @@ resource "digitalocean_droplet" "www-1" {
     host = self.ipv4_address
     user = "root"
     type = "ssh"
-    private_key = file(var.pvt_key)
+    private_key = var.pvt_key
     timeout = "2m"
   }
 
