@@ -1,4 +1,4 @@
-name: push-tofu-apply
+name: tofu-destroy
 
 on: [workflow_dispatch]
 
@@ -23,4 +23,3 @@ jobs:
 
       - name: Destroy
         run: tofu destroy -input=false -auto-approve
-        
