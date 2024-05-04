@@ -1,6 +1,6 @@
 terraform {
   cloud {
-    hostname = "app.terraform.io"
+    hostname     = "app.terraform.io"
     organization = "HYTKY"
 
     workspaces {
@@ -9,7 +9,7 @@ terraform {
   }
   required_providers {
     digitalocean = {
-      source = "digitalocean/digitalocean"
+      source  = "digitalocean/digitalocean"
       version = "~> 2.0"
     }
   }
