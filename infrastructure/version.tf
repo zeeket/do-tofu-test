@@ -4,7 +4,7 @@ terraform {
     organization = "HYTKY"
 
     workspaces {
-      name = "default"
+      name = "do-tofu-test"
     }
   }
   required_providers {
