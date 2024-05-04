@@ -1,3 +1,8 @@
+resource "digitalocean_ssh_key" "terraform" {
+  name       = "Terraform Example"
+  public_key = file(var.pub_key)
+}
+
 resource "digitalocean_droplet" "www-1" {
   image = "ubuntu-20-04-x64"
   name = "www-1"
