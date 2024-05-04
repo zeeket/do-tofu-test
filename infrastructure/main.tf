@@ -1,7 +1,3 @@
-data "digitalocean_ssh_key" "terraform" {
-  name = "terraform"
-}
-
 resource "digitalocean_droplet" "www-1" {
   image = "ubuntu-20-04-x64"
   name = "www-1"
