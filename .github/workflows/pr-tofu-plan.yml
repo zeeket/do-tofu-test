@@ -50,7 +50,7 @@ jobs:
 
     - name: Plan
       env:
-        TF_VAR_do_token: ${{ secrets.DO_TOKEN }}
+        TF_VAR_do_token: ${{ secrets.DO_PAT }}
         TF_VAR_pvt_key: ${{ secrets.PVT_KEY }}
         TF_VAR_pub_key: ${{ secrets.PUB_KEY }}
         TF_TOKEN_app_terraform_io: ${{ secrets.TF_API_TOKEN }}
