@@ -33,5 +33,4 @@ jobs:
             TF_VAR_pvt_key: ${{ secrets.PVT_KEY }}
             TF_VAR_pub_key: ${{ secrets.PUB_KEY }}
             TF_TOKEN_app_terraform_io: ${{ secrets.TF_API_TOKEN }}
-            TF_LOG_PROVIDER: "DEBUG"
         run: tofu apply -input=false -auto-approve
