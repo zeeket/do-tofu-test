@@ -17,4 +17,9 @@ apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker
 apt update
 apt install -y git
 git clone ${REPO_URL} /opt/webapp
+
+
+IP=$(ip addr show eth0 | grep 'inet ' | awk '{print $2}' | cut -d/ -f1)
+echo "NEXTAUTH_URL=http://$IP" >> /opt/webapp/.env
+
 docker compose -f /opt/webapp/docker/docker-compose.prod.yml up -d 

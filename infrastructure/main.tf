@@ -3,7 +3,6 @@ locals {
     config = {
       DATABASE_URL            = "postgres://postgres:tekno@postgres:5432/postgres",
       POSTGRES_PASSWORD       = var.POSTGRES_PASSWORD,
-      NEXTAUTH_URL            = digitalocean_droplet.www-1.ipv4_address,
       NEXTAUTH_SECRET         = var.NEXTAUTH_SECRET,
       NEXT_PUBLIC_TG_BOT_NAME = var.NEXT_PUBLIC_TG_BOT_NAME,
       TG_BOT_TOKEN            = var.TG_BOT_TOKEN,
