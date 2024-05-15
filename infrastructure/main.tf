@@ -9,7 +9,7 @@ locals {
       FORUM_ROOT_NAME         = var.FORUM_ROOT_NAME
     }
   })
-  REPO_URL = "https://${var.GITHUB_SERVER_URL}/${var.GITHUB_REPOSITORY}.git"
+  REPO_URL = "${var.GITHUB_SERVER_URL}/${var.GITHUB_REPOSITORY}.git"
 }
 
 data "cloudinit_config" "config" {
