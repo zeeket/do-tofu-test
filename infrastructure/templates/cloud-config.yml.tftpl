@@ -4,4 +4,5 @@ users:
       - ${pub_key}
 write_files:
   - path: /opt/webapp/.env
-    content: ${dotenv}
+    content: |
+      ${indent(4, dotenv)}

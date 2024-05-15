@@ -46,8 +46,8 @@ jobs:
 
       - name: Apply
         env:
-            TF_VAR_GITHUB_SERVER_URL: ${GITHUB_SERVER_URL}
-            TF_VAR_GITHUB_REPOSITORY: ${GITHUB_REPOSITORY}
+            TF_VAR_GITHUB_SERVER_URL: ${{ github.server_url }}
+            TF_VAR_GITHUB_REPOSITORY: ${{ github.repository }}
             TF_VAR_do_token: ${{ secrets.DO_PAT }}
             TF_VAR_pub_key: ${{ secrets.PUB_KEY }}
             TF_VAR_DATABASE_URL: ${{ secrets.DATABASE_URL }}
