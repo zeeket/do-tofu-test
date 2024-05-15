@@ -29,7 +29,7 @@ data "cloudinit_config" "config" {
   part {
     filename     = "cloud-config.yml"
     content_type = "text/cloud-config"
-    content = templatefile("${path.module}/templates/cloud-config.yml.tftpl", { pub_key = vars.pub_key, dotenv = locals.dotenv }
+    content = templatefile("${path.module}/templates/cloud-config.yml.tftpl", { pub_key = var.pub_key, dotenv = local.dotenv }
     )
   }
 }
