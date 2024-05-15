@@ -46,8 +46,15 @@ jobs:
 
       - name: Apply
         env:
+            TF_VAR_GITHUB_SERVER_URL: ${GITHUB_SERVER_URL}
+            TF_VAR_GITHUB_REPOSITORY: ${GITHUB_REPOSITORY}
             TF_VAR_do_token: ${{ secrets.DO_PAT }}
-            TF_VAR_pvt_key: ${{ secrets.PVT_KEY }}
             TF_VAR_pub_key: ${{ secrets.PUB_KEY }}
+            TF_VAR_DATABASE_URL: ${{ secrets.DATABASE_URL }}
+            TF_VAR_POSTGRES_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}
+            TF_VAR_NEXTAUTH_SECRET: ${{ secrets.NEXTAUTH_SECRET }}
+            TF_VAR_NEXT_PUBLIC_TG_BOT_NAME: ${{ secrets.NEXT_PUBLIC_TG_BOT_NAME }}
+            TF_VAR_TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
+            TF_VAR_FORUM_ROOT_NAME: ${{ secrets.FORUM_ROOT_NAME }}
             TF_TOKEN_app_terraform_io: ${{ secrets.TF_API_TOKEN }}
         run: tofu apply -input=false -auto-approve

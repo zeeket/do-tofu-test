@@ -1,0 +1,7 @@
+users:
+  - name: minni
+    ssh_authorized_keys:
+      - ${pub_key}
+write_files:
+  - path: /opt/webapp/.env
+    content: ${dotenv}
