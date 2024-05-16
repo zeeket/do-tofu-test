@@ -52,3 +52,13 @@ variable "FORUM_ROOT_NAME" {
   description = "Forum Root Name used in seeding"
   type        = string
 }
+
+variable "TG_ACTIVE_GROUP_IDS" {
+  description = "Comma separated Telegram Active Group IDs"
+  type        = string
+}
+
+variable "TG_ADMIN_GROUP_IDS" {
+  description = "Comma separated Telegram Admin Group IDs"
+  type        = string
+}

@@ -9,6 +9,14 @@ locals {
       FORUM_ROOT_NAME         = var.FORUM_ROOT_NAME
     }
   })
+  hytkybot_dotenv = templatefile("${path.module}/templates/.env.tftpl", {
+    config = {
+      TG_BOT_TOKEN        = var.TG_BOT_TOKEN,
+      TG_ACTIVE_GROUP_IDS = var.TG_ACTIVE_GROUP_IDS
+      TG_ADMIN_GROUP_IDS  = var.TG_ADMIN_GROUP_IDS
+      PORT                = "3000"
+    }
+  })
   REPO_URL = "${var.GITHUB_SERVER_URL}/${var.GITHUB_REPOSITORY}.git"
 }
 
@@ -28,7 +36,12 @@ data "cloudinit_config" "config" {
   part {
     filename     = "cloud-config.yml"
     content_type = "text/cloud-config"
-    content = templatefile("${path.module}/templates/cloud-config.yml.tftpl", { pub_key = var.pub_key, dotenv = local.dotenv }
+    content = templatefile("${path.module}/templates/cloud-config.yml.tftpl",
+      {
+        pub_key         = var.pub_key,
+        dotenv          = local.dotenv,
+        hytkybot_dotenv = local.hytkybot_dotenv
+      }
     )
   }
 }

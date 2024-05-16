@@ -6,3 +6,6 @@ write_files:
   - path: /opt/webapp/.env
     content: |
       ${indent(4, dotenv)}
+  - path: /opt/webapp/.hytkybot.env
+    content: |
+      ${indent(4, hytkybot_dotenv)}
