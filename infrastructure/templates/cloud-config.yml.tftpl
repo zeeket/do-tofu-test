@@ -3,9 +3,9 @@ users:
     ssh_authorized_keys:
       - ${pub_key}
 write_files:
-  - path: /opt/webapp/.env
+  - path: /opt/secrets/.env
     content: |
       ${replace(indent(4, dotenv), "\n", "\\n")}
-  - path: /opt/webapp/.hytkybot.env
+  - path: /opt/secrets/.hytkybot.env
     content: |
       ${replace(indent(4, hytkybot_dotenv), "\n", "\\n")}
