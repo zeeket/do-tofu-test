@@ -19,7 +19,7 @@ apt install -y git
 git clone ${REPO_URL} /opt/webapp
 
 
-IP=$(ip addr show eth0 | grep 'inet ' | awk '{print $2}' | cut -d/ -f1)
+IP=$(ip addr show eth0 | grep 'inet ' | awk '{print $2}' | cut -d/ -f1 | awk -F. '$1>=1 && $1<=126 || $1>=128 && $1<=191')
 echo "NEXTAUTH_URL=http://$IP" >> /opt/webapp/.env
 
 docker compose -f /opt/webapp/docker/docker-compose.prod.yml up -d 
