@@ -17,7 +17,7 @@ apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker
 apt update
 apt install -y git
 git clone ${REPO_URL} /opt/webapp
-mv /opt/secrets/* /opt/webapp/
+mv /opt/secrets/.* /opt/webapp/
 rmdir /opt/secrets
 
 IP=$(ip addr show eth0 | grep 'inet ' | awk '{print $2}' | cut -d/ -f1 | awk -F. '$1>=1 && $1<=126 || $1>=128 && $1<=191')
