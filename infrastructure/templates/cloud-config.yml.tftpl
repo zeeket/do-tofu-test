@@ -5,7 +5,7 @@ users:
 write_files:
   - path: /opt/secrets/.env
     content: |
-      ${indent(4, dotenv)}
+      ${indent(6, dotenv)}
   - path: /opt/secrets/.hytkybot.env
     content: |
-      ${indent(4, hytkybot_dotenv)}
+      ${indent(6, hytkybot_dotenv)}
