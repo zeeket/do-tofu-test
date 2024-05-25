@@ -24,8 +24,8 @@ jobs:
       - name: Destroy
         run: tofu destroy -input=false -auto-approve
         env:
-          TF_VAR_GITHUB_SERVER_URL: ${GITHUB_SERVER_URL}
-          TF_VAR_GITHUB_REPOSITORY: ${GITHUB_REPOSITORY}
+          TF_VAR_GITHUB_SERVER_URL: ${{ github.server_url }}
+          TF_VAR_GITHUB_REPOSITORY: ${{ github.repository }}
           TF_VAR_do_token: ${{ secrets.DO_PAT }}
           TF_VAR_pub_key: ${{ secrets.PUB_KEY }}
           TF_VAR_DATABASE_URL: ${{ secrets.DATABASE_URL }}
@@ -34,4 +34,6 @@ jobs:
           TF_VAR_NEXT_PUBLIC_TG_BOT_NAME: ${{ secrets.NEXT_PUBLIC_TG_BOT_NAME }}
           TF_VAR_TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
           TF_VAR_FORUM_ROOT_NAME: ${{ secrets.FORUM_ROOT_NAME }}
+          TF_VAR_TG_ACTIVE_GROUP_IDS: ${{ secrets.TG_ACTIVE_GROUP_IDS }}
+          TF_VAR_TG_ADMIN_GROUP_IDS: ${{ secrets.TG_ADMIN_GROUP_IDS }}
           TF_TOKEN_app_terraform_io: ${{ secrets.TF_API_TOKEN }}
